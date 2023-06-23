@@ -15,7 +15,7 @@ public class ServicioTelevisor {
         Televisor televisor = new Televisor();
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-    public void crearTelevisor() {
+    public Televisor crearTelevisor() {
 
         televisor.crearElectrodomestico();
         System.out.println("Cual es el tamaño en pulgadas?");
@@ -29,10 +29,11 @@ public class ServicioTelevisor {
             televisor.setTda(Boolean.FALSE);
         }
         
+        return televisor;
 
     }
 
-    public void precioFinal() {
+    public double precioFinal() {
 
         Double valorResolucion = 0.00;
         if (televisor.getResolucion()<40){
@@ -44,6 +45,7 @@ public class ServicioTelevisor {
         }
         System.out.println("El valor final del lavarropa es de: $ " + (televisor.precioFinal()+valorTda+valorResolucion));
         System.out.println("TDA: " + televisor.getTda()+ "|Color:  " + televisor.getColor().toUpperCase() + "|Consumo: " + televisor.getConsumoEnergetico() + "|Peso: " + televisor.getPeso() + "|Precio: " + televisor.getPrecio() + "|Pulgadas: " + televisor.getResolucion());
+    return televisor.precioFinal()+valorTda+valorResolucion;
     }
 
 }

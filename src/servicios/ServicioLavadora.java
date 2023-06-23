@@ -16,16 +16,16 @@ public class ServicioLavadora {
     Lavadora lavadora = new Lavadora();
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-    public void crearLavadora() {
+    public Lavadora crearLavadora() {
 
         lavadora.crearElectrodomestico();
         System.out.println("Cual es la capacidad de carga en kilos (0kg a 50gk):");
         int carga = leer.nextInt();
         lavadora.setCarga(carga);
-
+return lavadora;
     }
 
-    public void precioFinal() {
+    public Double precioFinal() {
 
         Double valorCarga = 0.00;
         if (lavadora.getCarga()<30){
@@ -34,6 +34,7 @@ public class ServicioLavadora {
         }
         System.out.println("El valor final del lavarropa es de: $ " + (lavadora.precioFinal()+valorCarga));
         System.out.println("Carga: " + lavadora.getCarga() + "|Color:  " + lavadora.getColor().toUpperCase() + "|Consumo: " + lavadora.getConsumoEnergetico() + "|Peso: " + lavadora.getPeso() + "|Precio: " + lavadora.getPrecio());
+    return lavadora.precioFinal()+valorCarga;
     }
 
 }
