@@ -141,6 +141,11 @@ public class Lavadora extends Electrodomesticos {
         }
         return valorPeso + valorEner + this.getPrecio();
     }
+
+    @Override
+    public String toString() {
+        return "Lavadora{" + "/Color: " + this.getColor() + '}';
+    }
     
 
 }

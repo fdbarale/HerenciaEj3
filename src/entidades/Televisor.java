@@ -116,7 +116,10 @@ public class Televisor extends Electrodomesticos {
         }
         return valorPeso + valorEner + this.getPrecio();
     }
-
+@Override
+    public String toString() {
+        return "TV{" + "/Color: " + this.getColor() + '}';
+    }
     
     
 }
